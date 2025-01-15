@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./css/HomePageSection.css";
 import SongCard from "./SongCard";
 
-const HomePageSection = ({ title, items, type }) => (
+const HomePageSection = ({ title, items, type, recommendation }) => (
   <div className="section">
     <h3 className="section-title">{title}</h3>
     <div className="d-flex flex-row bd-highlight scroll-list">
@@ -11,7 +11,12 @@ const HomePageSection = ({ title, items, type }) => (
         items
           .slice(0, 10)
           .map((item, index) => (
-            <SongCard key={index} item={item} type={type} />
+            <SongCard
+              key={index}
+              item={item}
+              type={type}
+              recommendation={recommendation}
+            />
           ))
       ) : (
         <p>No {title.toLowerCase()} available.</p>

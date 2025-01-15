@@ -7,6 +7,12 @@ const Api = axios.create({
   withCredentials: true,
 });
 
+const RecommendationApi = axios.create({
+  baseURL:
+    process.env["REACT_APP_RECOMMENDATION_BASE_URL"] || "http://localhost:8000",
+  withCredentials: true,
+});
+
 // Function to get headers, including authorization if available
 const getHeaders = () => {
   const token = localStorage.getItem("token");
@@ -117,3 +123,7 @@ export const addGenreApi = (data) => Api.post(`/genre`, data, getHeaders());
 export const updateGenreApi = (id, data) =>
   Api.patch(`/genre/${id}`, data, getHeaders());
 export const deleteGenreApi = (id) => Api.delete(`/genre/${id}`, getHeaders());
+
+// ** ==================== Recommendations API ======================== ** //
+export const getRecommendationsApi = (data) =>
+  RecommendationApi.post("/get_recommendations", data, getHeaders());

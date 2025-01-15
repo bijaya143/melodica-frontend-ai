@@ -1,12 +1,17 @@
 import React from "react";
 import "./css/HeroSlideCard.css";
 
-const HeroSlideCard = ({ item }) => {
+const HeroSlideCard = ({ item, type }) => {
   return (
     <div className="hero-slide-card">
       <div className="hero-slide-card-img-container">
         <img
-          src={`${process.env.REACT_APP_BACKEND_IMAGE_BASE_URL}${item.imageUrl}`}
+          // src={`${process.env.REACT_APP_BACKEND_IMAGE_BASE_URL}${item.imageUrl}`}
+          src={
+            type == "ai"
+              ? item.imageUrl
+              : `${process.env.REACT_APP_BACKEND_IMAGE_BASE_URL}${item.imageUrl}`
+          }
           alt={item.title}
           className="hero-slide-card-img"
         />

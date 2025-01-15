@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const SongCard = ({ item, type }) => {
+const SongCard = ({ item, type, recommendation }) => {
   console.log("SongCard item:", item, "type:", type);
   return (
     <div className="p-2 bd-highlight">
@@ -25,7 +25,11 @@ const SongCard = ({ item, type }) => {
             width="100%"
             className={`card-img-top ${type === "artist" ? "" : ""}`}
             alt={type === "artist" ? item.displayName : item.title}
-            src={`${process.env.REACT_APP_BACKEND_IMAGE_BASE_URL}${item.imageUrl}`}
+            src={
+              recommendation == "ai"
+                ? item.imageUrl
+                : `${process.env.REACT_APP_BACKEND_IMAGE_BASE_URL}${item.imageUrl}`
+            }
             onError={({ currentTarget }) => {
               currentTarget.onerror = null; // prevents looping
               currentTarget.src = "/assets/images/default_image.png";

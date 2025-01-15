@@ -4,7 +4,7 @@ import HeroSlideCard from "./HeroSlideCard";
 import "./css/HeroSlider.css";
 import { Link } from "react-router-dom";
 
-const HeroSlider = ({ items }) => {
+const HeroSlider = ({ items, type }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -52,7 +52,7 @@ const HeroSlider = ({ items }) => {
         {items.slice(0, 5).map((item, index) => (
           <Link to={`/song/${item._id}`} key={index}>
             <div className="slider-item">
-              <HeroSlideCard item={item} />
+              <HeroSlideCard item={item} type={type} />
             </div>
           </Link>
         ))}
