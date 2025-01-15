@@ -1,0 +1,72 @@
+.hero-slider {
+  position: relative;
+  padding: 0; /* Remove unnecessary padding */
+  border-radius: 12px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-slider .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 15px; /* Reduce bottom margin */
+  font-weight: 700;
+  color: black;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px; /* Add horizontal spacing between items */
+}
+
+.slider-item {
+  max-width: 100%; /* Utilize the full width */
+  margin: 0 10px; /* Add space between the items */
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.slick-list {
+  overflow: hidden;
+  padding: 0; /* Reset padding */
+  gap: 20px; /* Optional: Adds space between items if supported */
+}
+
+.slider-item img {
+  height: 100%; /* Occupy the full height */
+  width: 100%; /* Stretch to fill the width */
+  object-fit: cover; /* Ensures the image is cropped correctly */
+  border-radius: 12px;
+}
+
+.slick-list {
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .slick-slide > div {
+    width: calc(60% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .slick-slide > div {
+    width: calc(80% - 15px);
+  }
+}
+
+@media (max-width: 600px) {
+  .slick-slide > div {
+    width: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .slick-slide > div {
+    width: calc(100% - 10px);
+  }
+}
