@@ -39,5 +39,5 @@
 }
 
 .genre-card.selected .genre-name {
-  color: white; /* Ensure text is readable when selected */
+  color: white;
 }
