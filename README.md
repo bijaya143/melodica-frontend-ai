@@ -25,7 +25,3 @@
 # Project Description
 
 ### Project Overview
-
-### Project Structure
-
-- Everything is quite similar to default React structure
