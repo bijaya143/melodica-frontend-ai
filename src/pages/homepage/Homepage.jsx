@@ -28,7 +28,7 @@ const Homepage = () => {
             getTrendingSongsApi(1), //static page number for now
             getSongsApi(1), //static page number for now
             getRecommendationsApi({
-              selected_song: "Hello",
+              selected_song: "Counting Stars",
             }),
           ]);
 
@@ -55,7 +55,6 @@ const Homepage = () => {
       <div className="row justify-content-center">
         <div className="col-md-11 p-4">
           <HeroSlider items={recommendedSongs} type="normal" />
-          {/* <HeroSlider items={aiRecommendedSongs} type="ai" /> */}
           <HomePageSection
             title="Recommended Songs"
             items={aiRecommendedSongs}
