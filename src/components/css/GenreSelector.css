@@ -34,7 +34,7 @@
 
 .genre-card.selected {
   background-color: #007bff;
-  color: white; /* White text for selected genre */
+  color: white;
   border: 1px solid #0056b3; /* Darker border for selected genre */
 }
 
